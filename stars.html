@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border:1px solid black;
+            margin:auto ;
+        }
+        table td{
+            padding: 20px;
+            border:1px solid black;
+        }
+        table th{
+            padding: 20px;
+            border:1px solid black;
+        }
+        caption{
+            font-size:15pt;
+            font-weight: 800;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="content"></div>
+<table id="table" >
+    <caption>Задание со звездочкой для самых звезданутых</caption>
+    <tr>
+        <th>Город</th>
+        <th>Площадь</th>
+        <th>Население</th>
+        <th>Столица</th>
+    </tr>
+</table>
+<script type="application/ecmascript">
+    let table = document.querySelector('#table');
+    let city=["Айдахо","216 632","1 584 985",false ];
+    let city2=["Вашингтон","184 827","6 830 038",true];
+    let city3=["Канбе́рра","471,78"," 410 199",true];
+    let city4=["Амстердам","219,4","872 757",true ];
+    let city5=["Кемер","470","20 000",false ];
+    let cities=[city,city2,city3,city4,city5];
+
+    fillTable(table,cities);
+    function  fillTable(table,cities){
+        for(var i =0; i<cities.length;i++){
+            var tr = document.createElement('tr');
+            for(var j=0;j<cities[i].length;j++){
+                var td = document.createElement('td');
+                td.innerHTML=cities[i][j];
+                tr.appendChild(td);
+            }
+        table.appendChild(tr);
+        }
+    }
+// <table>
+//     <tr>
+//         <th>City</th>
+//         <th>sq</th>
+//         <th>popul</th>
+//         <th>isCapital</th>
+//     </tr></table>
+
+</script>
+</body>
+</html>
